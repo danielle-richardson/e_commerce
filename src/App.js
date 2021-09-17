@@ -4,9 +4,7 @@ import Products from './components/Products/Products';
 import NavBar from './components/NavBar/NavBar';
 import Cart from './components/Cart/Cart';
 import Checkout from './components/CheckoutForm/Checkout/Checkout';
-
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
 import { commerce } from './lib/commerce';
 
 const App = () => {
@@ -81,7 +79,7 @@ const App = () => {
     <Router>
       <div style={{ display: 'flex' }}>
         <CssBaseline />
-        <Navbar totalItems={cart.total_items} handleDrawerToggle={handleDrawerToggle} />
+        <NavBar totalItems={cart.total_items} />
         <Switch>
           <Route exact path="/">
             <Products products={products} onAddToCart={handleAddToCart} handleUpdateCartQty />
