@@ -9,6 +9,7 @@ import { commerce } from './lib/commerce';
 
 const App = () => {
 
+  const [mobileOpen, setMobileOpen] = React.useState(false);
   // Create a new state for products & cart - by deafault = to empty array, then fetch from api 'await commerce.action.action'. const fetch can be created it two diff ways below: 
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
@@ -74,12 +75,14 @@ const App = () => {
     fetchCart();
   }, []);
 
+  const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
+
 
   return (
     <Router>
       <div style={{ display: 'flex' }}>
         <CssBaseline />
-        <NavBar totalItems={cart.total_items} />
+        <NavBar totalItems={cart.total_items} handleDrawerToggle={handleDrawerToggle}/>
         <Switch>
           <Route exact path="/">
             <Products products={products} onAddToCart={handleAddToCart} handleUpdateCartQty />
