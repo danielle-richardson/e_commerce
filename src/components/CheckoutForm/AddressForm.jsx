@@ -49,6 +49,7 @@ const AddressForm = ({ checkoutToken, test }) => {
   }, [shippingSubdivision]);
 
   return (
+    
     <>
       <Typography variant="h6" gutterBottom>Shipping address</Typography>
       <FormProvider {...methods}>
@@ -103,4 +104,3 @@ const AddressForm = ({ checkoutToken, test }) => {
 };
 
 export default AddressForm;
-
