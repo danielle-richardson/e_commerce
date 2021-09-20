@@ -1,5 +1,4 @@
-![alt text](https://imgur.com/a/wGrf08z)
-
+[Screen-Shot-2021-09-20-at-11-36-32-AM.png](https://postimg.cc/sQkBs4rW)
 
 # Getting Started with Create React App
 
