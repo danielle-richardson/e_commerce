@@ -2,10 +2,9 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles(() => ({
   home: {
-    maxWidth: '100%',
+    maxWidth: '50%',
     backgroundImage: 'https://cdn2.hubspot.net/hubfs/53/best-free-stock-photo-sites.jpg',
     backgroundPosition: 'center',
-    display: 'flex',
     paddingTop: '60px',
     height: '80vh',
     overflow: 'auto',
