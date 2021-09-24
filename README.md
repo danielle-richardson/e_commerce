@@ -1,5 +1,3 @@
-[Screen-Shot-2021-09-20-at-11-36-32-AM.png](https://postimg.cc/sQkBs4rW)
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
