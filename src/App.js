@@ -2,21 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { CssBaseline } from '@material-ui/core';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { NavBar, Products, Cart, Checkout, Home } from './components';
-
 import { commerce } from './lib/commerce';
 
 const App = () => {
 
+   // Create a new state, ex: products & cart - by deafault = to empty array, then fetch from api 'await commerce.action.action'. const fetch can be created it two diff ways below: 
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  // Create a new state for products & cart - by deafault = to empty array, then fetch from api 'await commerce.action.action'. const fetch can be created it two diff ways below: 
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
 
+  //async arrow function similar to .then/.catch 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
 
+    //populates products 
     setProducts(data);
   };
 
@@ -25,7 +26,7 @@ const App = () => {
 
   }
 
-  //add items to cart 
+  //add items to cart, pass params over to api, setCart, add prop (onAddToCart={handleAddToCart} to Product Component below and then in Product.jsx/Products.jsx) 
   const handleAddToCart = async (productId, quantity) => {
     const item = await commerce.cart.add(productId, quantity);
 
@@ -68,6 +69,7 @@ const App = () => {
     }
   };
 
+  // This hook fetches products immediately on the application load. Has dependecy array set to empty [] (like componentDidMount) it only runs once 
   useEffect(() => {
     fetchProducts();
     fetchCart();

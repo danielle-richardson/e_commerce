@@ -16,13 +16,16 @@ const Cart = ({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart }) => {
     </Typography>
   );
 
+  //if the cart is empty, load until it fetches
   if (!cart.line_items) return 'Loading';
 
   const renderCart = () => (
     <>
       <Grid container spacing={3}>
+        {/* loop through cart items returns lineItem*/}
         {cart.line_items.map((lineItem) => (
           <Grid item xs={12} sm={4} key={lineItem.id}>
+            {/* Create item prop to use in CartItem.jsx */}
             <CartItem item={lineItem} onUpdateCartQty={onUpdateCartQty} onRemoveFromCart={onRemoveFromCart} />
           </Grid>
         ))}
@@ -39,6 +42,7 @@ const Cart = ({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart }) => {
 
   return (
     <Container>
+      {/* toolbar class used to push page down so its under nav bar*/}
       <div className={classes.toolbar} />
       <Typography className={classes.title} variant="h3" gutterBottom>Your Shopping Cart</Typography>
       { !cart.line_items.length ? renderEmptyCart() : renderCart() }

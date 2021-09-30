@@ -5,6 +5,7 @@ import { AddShoppingCart } from '@material-ui/icons';
 import useStyles from './styles';
 
 const Product = ({ product, onAddToCart }) => {
+  {/* This hook allows access to styles*/}
   const classes = useStyles();
 
   const handleAddToCart = () => onAddToCart(product.id, 1);
@@ -21,6 +22,7 @@ const Product = ({ product, onAddToCart }) => {
             ${product.price.formatted}
           </Typography>
         </div>
+        {/* Added dangerouslySet to avoid showing <p> in description*/}
         <Typography dangerouslySetInnerHTML={{ __html: product.description }} variant="body2" color="textSecondary" component="p" />
       </CardContent>
       <CardActions disableSpacing className={classes.cardActions}>

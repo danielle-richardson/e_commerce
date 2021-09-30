@@ -37,6 +37,7 @@ const PrimarySearchAppBar = ({ totalItems }) => {
           <Typography component={Link} to="/" variant="h6" className={classes.title} color="inherit">
             <img src={logo} alt="commerce.js" height="250px" width="250px"   className={classes.image} />
           </Typography>
+           {/* {class.grow} means we will take as much space as we need */}
           <div className={classes.grow} />
           {location.pathname === '/' && (
           <div className={classes.button}>
